@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.meera.service.service.PersonLocalService" class="com.meera.service.service.impl.PersonLocalServiceImpl" />
+	<bean id="com.meera.service.service.PersonLocalServiceUtil" class="com.meera.service.service.PersonLocalServiceUtil">
+		<property name="service" ref="com.meera.service.service.PersonLocalService" />
+	</bean>
+	<bean id="com.meera.service.service.PersonService" class="com.meera.service.service.impl.PersonServiceImpl" />
+	<bean id="com.meera.service.service.PersonServiceUtil" class="com.meera.service.service.PersonServiceUtil">
+		<property name="service" ref="com.meera.service.service.PersonService" />
+	</bean>
+	<bean id="com.meera.service.service.persistence.PersonPersistence" class="com.meera.service.service.persistence.PersonPersistenceImpl" parent="basePersistence" />
+</beans>
